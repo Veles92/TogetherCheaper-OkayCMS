@@ -22,6 +22,9 @@ class BundleService
     /** @var VariantsEntity */
     private $variantsEntity;
 
+    /** @var array<int, object|null> */
+    private $productCache = [];
+
     public function __construct(
         EntityFactory $entityFactory,
         ProductsHelper $productsHelper,
@@ -103,6 +106,31 @@ class BundleService
     }
 
     /**
+     * Повертає діагностику комплекту для адмін-панелі.
+     * Для активного комплекту використовуються ті самі перевірки, що й для фронтенду.
+     */
+    public function diagnose($deal): object
+    {
+        if (empty($deal->visible)) {
+            return (object) [
+                'code' => 'disabled',
+                'regular_price' => 0.0,
+                'bundle_price' => round((float) ($deal->bundle_price ?? 0), 2),
+                'saving' => 0.0,
+            ];
+        }
+
+        $inspection = $this->inspectRuntimeDeal($deal);
+
+        return (object) [
+            'code' => $inspection->code,
+            'regular_price' => $inspection->regular_price,
+            'bundle_price' => $inspection->bundle_price,
+            'saving' => $inspection->saving,
+        ];
+    }
+
+    /**
      * Готує комплект для фронтенду/кошика. Якщо передано товар поточної сторінки,
      * перевикористовуємо його готові дані незалежно від того, з якого боку пари
      * він знаходиться.
@@ -112,13 +140,34 @@ class BundleService
      */
     private function prepareRuntimeDeal($deal, $pageProduct = null): ?object
     {
+        $inspection = $this->inspectRuntimeDeal($deal, $pageProduct);
+        return $inspection->runtime;
+    }
+
+    /**
+     * Єдине джерело істини для runtime-перевірки комплекту та діагностики в адмінці.
+     *
+     * @param object      $deal
+     * @param object|null $pageProduct
+     */
+    private function inspectRuntimeDeal($deal, $pageProduct = null): object
+    {
+        $bundlePrice = round((float) ($deal->bundle_price ?? 0), 2);
+        $result = (object) [
+            'runtime' => null,
+            'code' => 'invalid_config',
+            'regular_price' => 0.0,
+            'bundle_price' => $bundlePrice,
+            'saving' => 0.0,
+        ];
+
         if (
             empty($deal->primary_product_id)
             || empty($deal->secondary_product_id)
             || (int) $deal->primary_product_id === (int) $deal->secondary_product_id
-            || (float) $deal->bundle_price <= 0
+            || $bundlePrice <= 0
         ) {
-            return null;
+            return $result;
         }
 
         $primaryProductId = (int) $deal->primary_product_id;
@@ -126,42 +175,63 @@ class BundleService
         $pageProductId = !empty($pageProduct->id) ? (int) $pageProduct->id : 0;
 
         if ($pageProductId > 0 && $pageProductId !== $primaryProductId && $pageProductId !== $secondaryProductId) {
-            return null;
+            $result->code = 'not_for_page';
+            return $result;
         }
 
         $primaryProduct = $pageProductId === $primaryProductId
             ? $pageProduct
             : $this->loadProduct($primaryProductId);
         if (empty($primaryProduct) || empty($primaryProduct->id)) {
-            return null;
+            $result->code = 'primary_product_unavailable';
+            return $result;
         }
 
         $secondaryProduct = $pageProductId === $secondaryProductId
             ? $pageProduct
             : $this->loadProduct($secondaryProductId);
         if (empty($secondaryProduct) || empty($secondaryProduct->id)) {
-            return null;
+            $result->code = 'secondary_product_unavailable';
+            return $result;
         }
 
         $primaryVariant = $this->findProductVariant($primaryProduct, (int) $deal->primary_variant_id);
-        if ($primaryVariant === null || (float) $primaryVariant->stock < 1) {
-            return null;
+        if ($primaryVariant === null) {
+            $result->code = 'primary_variant_unavailable';
+            return $result;
+        }
+        if ((float) $primaryVariant->stock < 1) {
+            $result->code = 'primary_out_of_stock';
+            return $result;
         }
 
         $secondaryVariant = $this->findProductVariant($secondaryProduct, (int) $deal->secondary_variant_id);
-        if ($secondaryVariant === null || (float) $secondaryVariant->stock < 1) {
-            return null;
+        if ($secondaryVariant === null) {
+            $result->code = 'secondary_variant_unavailable';
+            return $result;
+        }
+        if ((float) $secondaryVariant->stock < 1) {
+            $result->code = 'secondary_out_of_stock';
+            return $result;
         }
 
         $primaryPrice = (float) ($primaryVariant->price ?? 0);
         $secondaryPrice = (float) ($secondaryVariant->price ?? 0);
         $regularPrice = $primaryPrice + $secondaryPrice;
-        $bundlePrice = round((float) $deal->bundle_price, 2);
         $saving = round($regularPrice - $bundlePrice, 2);
 
+        $result->regular_price = $regularPrice;
+        $result->saving = $saving;
+
+        if ($primaryPrice <= 0 || $secondaryPrice <= 0) {
+            $result->code = 'product_price_invalid';
+            return $result;
+        }
+
         // Якщо поточні ціни вже не дорожчі за комплект — блок не показуємо.
-        if ($primaryPrice <= 0 || $secondaryPrice <= 0 || $saving <= 0) {
-            return null;
+        if ($saving <= 0) {
+            $result->code = 'bundle_price_not_cheaper';
+            return $result;
         }
 
         $runtime = clone $deal;
@@ -176,7 +246,10 @@ class BundleService
             : 0;
         $runtime->page_product_id = $pageProductId;
 
-        return $runtime;
+        $result->runtime = $runtime;
+        $result->code = 'active';
+
+        return $result;
     }
 
     private function loadProduct(int $productId): ?object
@@ -185,12 +258,19 @@ class BundleService
             return null;
         }
 
+        if (array_key_exists($productId, $this->productCache)) {
+            return $this->productCache[$productId];
+        }
+
         $products = $this->productsHelper->getList([
             'id' => [$productId],
             'limit' => 1,
         ]);
 
-        return !empty($products) ? reset($products) : null;
+        $product = !empty($products) ? reset($products) : null;
+        $this->productCache[$productId] = $product ?: null;
+
+        return $this->productCache[$productId];
     }
 
     /**
