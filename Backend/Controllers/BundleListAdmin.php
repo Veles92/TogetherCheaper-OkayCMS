@@ -7,6 +7,7 @@ use Okay\Entities\ProductsEntity;
 use Okay\Entities\VariantsEntity;
 use Okay\Entities\ImagesEntity;
 use Okay\Modules\Astra\TogetherCheaper\Entities\BundleEntity;
+use Okay\Modules\Astra\TogetherCheaper\Services\BundleService;
 
 class BundleListAdmin extends IndexAdmin
 {
@@ -14,7 +15,8 @@ class BundleListAdmin extends IndexAdmin
         BundleEntity $bundlesEntity,
         ProductsEntity $productsEntity,
         VariantsEntity $variantsEntity,
-        ImagesEntity $imagesEntity
+        ImagesEntity $imagesEntity,
+        BundleService $bundleService
     ) {
         if ($this->request->method('post')) {
             $ids = $this->request->post('check');
@@ -121,6 +123,8 @@ class BundleListAdmin extends IndexAdmin
             if ($bundle->display_name === '' || ($autoName !== '' && $bundle->display_name === $autoName)) {
                 $bundle->display_name = 'Комплект #' . (int) $bundle->id;
             }
+
+            $bundle->diagnostic = $bundleService->diagnose($bundle);
         }
 
         $this->design->assign('bundles', $bundles);
