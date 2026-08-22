@@ -1,0 +1,23 @@
+{
+  "Okay": "4.5.2",
+  "version": "1.1.0",
+  "moduleName": "Разом дешевше",
+  "vendor": {
+    "email": "astra.dn.ua@gmail.com",
+    "site": "https://astra.dn.ua"
+  },
+  "modifications": {
+    "front": [
+      {
+        "file": "product.tpl",
+        "changes": [
+          {
+            "find": "variant_select",
+            "closestFind": "details_boxed__item",
+            "append": "{Astra_together_cheaper product=$product}"
+          }
+        ]
+      }
+    ]
+  }
+}

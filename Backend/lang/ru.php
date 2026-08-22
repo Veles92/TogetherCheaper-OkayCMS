@@ -1,0 +1,34 @@
+<?php
+$lang['astra_together_cheaper__menu_title'] = 'Вместе дешевле';
+$lang['astra_together_cheaper__title'] = 'Вместе дешевле';
+$lang['astra_together_cheaper__add'] = 'Создать комплект';
+$lang['astra_together_cheaper__add_title'] = 'Новый комплект';
+$lang['astra_together_cheaper__edit_title'] = 'Редактирование комплекта';
+$lang['astra_together_cheaper__section_products'] = 'Товары комплекта';
+$lang['astra_together_cheaper__products_hint'] = 'Выберите два конкретных товара и их варианты. В корзину всегда добавляется именно эта пара.';
+$lang['astra_together_cheaper__primary_product'] = 'Основной товар';
+$lang['astra_together_cheaper__secondary_product'] = 'Второй товар';
+$lang['astra_together_cheaper__search_product'] = 'Начните вводить название товара';
+$lang['astra_together_cheaper__variant'] = 'Вариант товара';
+$lang['astra_together_cheaper__section_price'] = 'Цена комплекта';
+$lang['astra_together_cheaper__bundle_price'] = 'Вместе за';
+$lang['astra_together_cheaper__price_hint'] = 'Должна быть меньше текущей суммы двух выбранных вариантов.';
+$lang['astra_together_cheaper__name'] = 'Название комплекта';
+$lang['astra_together_cheaper__name_placeholder'] = 'Например: Для посудомоечной машины';
+$lang['astra_together_cheaper__name_hint'] = 'Необязательно. Если оставить пустым, название сформируется автоматически.';
+$lang['astra_together_cheaper__settings'] = 'Настройки';
+$lang['astra_together_cheaper__position'] = 'Приоритет';
+$lang['astra_together_cheaper__position_hint'] = 'Меньшее число = более высокий приоритет, если товар входит в несколько комплектов.';
+$lang['astra_together_cheaper__bundle'] = 'Комплект';
+$lang['astra_together_cheaper__price_short'] = 'Цена';
+$lang['astra_together_cheaper__empty'] = 'Комплектов пока нет';
+$lang['astra_together_cheaper__empty_hint'] = 'Создайте первый комплект «Вместе дешевле».';
+$lang['astra_together_cheaper__error_products_required'] = 'Выберите оба товара.';
+$lang['astra_together_cheaper__error_same_products'] = 'В первой версии комплект должен состоять из двух разных товаров.';
+$lang['astra_together_cheaper__error_variants_required'] = 'Для каждого товара нужно выбрать вариант.';
+$lang['astra_together_cheaper__error_price_required'] = 'Укажите корректную цену комплекта.';
+$lang['astra_together_cheaper__error_price_not_cheaper'] = 'Цена комплекта должна быть меньше обычной суммы двух товаров.';
+$lang['astra_together_cheaper__error_not_found'] = 'Комплект не найден.';
+$lang['astra_together_cheaper__error_save_failed'] = 'Не удалось сохранить комплект.';
+
+$lang['astra_together_cheaper__products'] = 'Товары';

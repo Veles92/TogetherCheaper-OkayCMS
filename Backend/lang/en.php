@@ -1,0 +1,34 @@
+<?php
+$lang['astra_together_cheaper__menu_title'] = 'Bundle deals';
+$lang['astra_together_cheaper__title'] = 'Bundle deals';
+$lang['astra_together_cheaper__add'] = 'Create bundle';
+$lang['astra_together_cheaper__add_title'] = 'New bundle';
+$lang['astra_together_cheaper__edit_title'] = 'Edit bundle';
+$lang['astra_together_cheaper__section_products'] = 'Bundle products';
+$lang['astra_together_cheaper__products_hint'] = 'Choose two specific products and variants. This exact pair will be added to cart.';
+$lang['astra_together_cheaper__primary_product'] = 'Primary product';
+$lang['astra_together_cheaper__secondary_product'] = 'Second product';
+$lang['astra_together_cheaper__search_product'] = 'Start typing a product name';
+$lang['astra_together_cheaper__variant'] = 'Variant';
+$lang['astra_together_cheaper__section_price'] = 'Bundle price';
+$lang['astra_together_cheaper__bundle_price'] = 'Together for';
+$lang['astra_together_cheaper__price_hint'] = 'Must be lower than the current sum of both selected variants.';
+$lang['astra_together_cheaper__name'] = 'Bundle name';
+$lang['astra_together_cheaper__name_placeholder'] = 'For example: Dishwasher care set';
+$lang['astra_together_cheaper__name_hint'] = 'Optional. An automatic name is generated when left blank.';
+$lang['astra_together_cheaper__settings'] = 'Settings';
+$lang['astra_together_cheaper__position'] = 'Priority';
+$lang['astra_together_cheaper__position_hint'] = 'Lower number = higher priority when a product is used in several bundles.';
+$lang['astra_together_cheaper__bundle'] = 'Bundle';
+$lang['astra_together_cheaper__price_short'] = 'Price';
+$lang['astra_together_cheaper__empty'] = 'No bundles yet';
+$lang['astra_together_cheaper__empty_hint'] = 'Create the first bundle deal.';
+$lang['astra_together_cheaper__error_products_required'] = 'Select both products.';
+$lang['astra_together_cheaper__error_same_products'] = 'The first version requires two different products.';
+$lang['astra_together_cheaper__error_variants_required'] = 'Select a variant for each product.';
+$lang['astra_together_cheaper__error_price_required'] = 'Enter a valid bundle price.';
+$lang['astra_together_cheaper__error_price_not_cheaper'] = 'Bundle price must be lower than the regular sum of both products.';
+$lang['astra_together_cheaper__error_not_found'] = 'Bundle not found.';
+$lang['astra_together_cheaper__error_save_failed'] = 'Could not save the bundle.';
+
+$lang['astra_together_cheaper__products'] = 'Products';
