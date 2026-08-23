@@ -541,6 +541,596 @@
             font-size: 16px;
         }
     }
+
+    @media (max-width: 767px) {
+        .atc-admin-header {
+            margin-bottom: 14px;
+        }
+
+        .atc-admin-header .main_header__inner {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .atc-admin-header .main_header__item,
+        .atc-admin-header .box_heading,
+        .atc-admin-header .box_btn_heading {
+            width: 100% !important;
+            max-width: none !important;
+        }
+
+        .atc-admin-header .heading_page {
+            font-size: 21px;
+            line-height: 1.25;
+        }
+
+        .atc-admin-header .btn-info {
+            width: 100% !important;
+            min-height: 42px;
+            padding: 0 16px;
+        }
+
+        .atc-admin-page .atc-admin-list-card {
+            width: 100%;
+            margin: 0;
+            border-radius: 12px;
+            overflow: visible;
+        }
+
+        .atc-admin-page .atc_admin_list {
+            width: 100%;
+            min-width: 0 !important;
+            overflow: visible;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_head {
+            display: none !important;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_body,
+        .atc-admin-page .atc_admin_list .okay_list_body_item {
+            display: block !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_body_item {
+            position: relative;
+            border-bottom: 1px solid #e5ebef;
+            background: #fff;
+            box-shadow: none;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_body_item:hover {
+            background: #fff;
+            box-shadow: none;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_row {
+            display: grid !important;
+            grid-template-columns: 22px 30px minmax(0, 1fr) auto auto;
+            grid-template-areas:
+                "drag check name status close"
+                "products products products products products"
+                "price price price price price"
+                "diagnostic diagnostic diagnostic diagnostic diagnostic";
+            column-gap: 8px;
+            row-gap: 10px;
+            align-items: center;
+            width: 100% !important;
+            min-width: 0 !important;
+            min-height: 0;
+            padding: 14px 12px !important;
+            box-sizing: border-box;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_boding {
+            min-width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_drag {
+            grid-area: drag;
+            width: 22px !important;
+            min-width: 22px !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_check {
+            grid-area: check;
+            width: 30px !important;
+            min-width: 30px !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_name {
+            grid-area: name;
+            width: 100% !important;
+            min-width: 0 !important;
+            text-align: left;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_name .link {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            overflow: hidden;
+            color: #173b54;
+            font-size: 14px;
+            line-height: 1.4;
+            font-weight: 700;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_status {
+            grid-area: status;
+            width: auto !important;
+            min-width: 0 !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_close {
+            grid-area: close;
+            width: 34px !important;
+            min-width: 34px !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_products {
+            grid-area: products;
+            width: 100% !important;
+            min-width: 0 !important;
+            padding-top: 10px !important;
+            border-top: 1px solid #edf1f4;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_products_inner {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_product_photo {
+            flex: 0 0 54px;
+            width: 54px;
+            height: 54px;
+            padding: 4px;
+            border-radius: 9px;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_product_photo img {
+            max-width: 46px;
+            max-height: 46px;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_plus {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            font-size: 17px;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_price,
+        .atc-admin-page .atc_admin_list .atc_bundle_diagnostic {
+            position: relative;
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100% !important;
+            min-width: 0 !important;
+            padding-top: 10px !important;
+            border-top: 1px solid #edf1f4;
+            text-align: left;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_price {
+            grid-area: price;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_diagnostic {
+            grid-area: diagnostic;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_price:before,
+        .atc-admin-page .atc_admin_list .atc_bundle_diagnostic:before {
+            flex: 0 0 auto;
+            content: attr(data-mobile-label);
+            color: #788995;
+            font-size: 11px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .025em;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_price strong {
+            min-height: 32px;
+            padding: 5px 10px;
+            font-size: 13px;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_diag {
+            width: auto;
+            min-width: 0;
+            align-items: flex-end;
+        }
+
+        .atc-admin-page .atc_diag_badge {
+            max-width: 100%;
+            min-height: 28px;
+            padding: 4px 9px;
+            font-size: 11px;
+        }
+
+        .atc-admin-page .atc_diag_badge[data-tooltip]:after {
+            right: 0;
+            left: auto;
+            bottom: calc(100% + 8px);
+            width: 240px;
+            max-width: calc(100vw - 48px);
+            transform: translateY(4px);
+        }
+
+        .atc-admin-page .atc_diag_badge[data-tooltip]:hover:after,
+        .atc-admin-page .atc_diag_badge[data-tooltip]:focus:after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .atc-admin-page .atc_diag_badge[data-tooltip]:focus {
+            outline: none;
+        }
+
+        .atc-admin-page .okay_list_footer {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 10px;
+            width: 100%;
+            min-height: 0;
+            padding: 12px !important;
+            box-sizing: border-box;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_foot_left {
+            display: grid !important;
+            grid-template-columns: 30px minmax(0, 1fr);
+            align-items: center;
+            gap: 8px;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_drag {
+            display: none !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_check {
+            width: 30px !important;
+            min-width: 30px !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_option {
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+
+        .atc-admin-page .atc-action-select,
+        .atc-admin-page .atc-action-button,
+        .atc-admin-page .atc-action-menu {
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .btn_blue {
+            width: 100% !important;
+            min-height: 42px;
+            margin: 0 !important;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .atc-admin-page .atc_admin_list .okay_list_row {
+            grid-template-columns: 20px 28px minmax(0, 1fr) auto auto;
+            column-gap: 6px;
+            padding: 12px 10px !important;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_name .link {
+            font-size: 13px;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_product_photo {
+            flex-basis: 50px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_product_photo img {
+            max-width: 42px;
+            max-height: 42px;
+        }
+
+        .atc-admin-page .atc_admin_list .atc_bundle_products_inner {
+            gap: 8px;
+        }
+    }
+
+
+    /* TogetherCheaper: final mobile footer/layout fix */
+    @media (max-width: 767px) {
+        .atc-admin-page {
+            width: 100% !important;
+            min-width: 0 !important;
+            padding-bottom: 88px !important;
+            box-sizing: border-box;
+        }
+
+        .atc-admin-page .atc-admin-list-card {
+            margin-bottom: 16px !important;
+        }
+
+        .atc-admin-page .okay_list_footer {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            display: block !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            min-height: 0 !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 12px !important;
+            overflow: visible !important;
+            box-sizing: border-box !important;
+            background: #f8fafb !important;
+            border-top: 1px solid #e3e9ee !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_foot_left {
+            position: relative !important;
+            display: grid !important;
+            grid-template-columns: 30px minmax(0, 1fr) !important;
+            grid-template-rows: auto !important;
+            align-items: center !important;
+            gap: 8px !important;
+            float: none !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            height: auto !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            overflow: visible !important;
+            box-sizing: border-box !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_drag {
+            display: none !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_check {
+            position: static !important;
+            grid-column: 1 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            float: none !important;
+            width: 30px !important;
+            min-width: 30px !important;
+            max-width: 30px !important;
+            height: 40px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_option {
+            position: relative !important;
+            grid-column: 2 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            float: none !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            height: 40px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: visible !important;
+        }
+
+        .atc-admin-page .okay_list_footer .atc-action-select {
+            position: relative !important;
+            display: block !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            height: 40px !important;
+            margin: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .atc-action-button {
+            position: relative !important;
+            display: flex !important;
+            align-items: center !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            height: 40px !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        .atc-admin-page .okay_list_footer .atc-action-menu {
+            width: 100% !important;
+            min-width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .atc-admin-page .okay_list_footer > .btn_blue {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            float: none !important;
+            clear: both !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            min-height: 42px !important;
+            height: 42px !important;
+            margin: 0 !important;
+            padding: 0 16px !important;
+            box-sizing: border-box !important;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .atc-admin-page {
+            padding-bottom: 96px !important;
+        }
+
+        .atc-admin-page .okay_list_footer {
+            padding: 10px !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_foot_left {
+            grid-template-columns: 28px minmax(0, 1fr) !important;
+            gap: 8px !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_check {
+            width: 28px !important;
+            min-width: 28px !important;
+            max-width: 28px !important;
+        }
+    }
+
+
+    /* TogetherCheaper: mobile outer card rounding */
+    @media (max-width: 767px) {
+        .atc-admin-page .atc-admin-list-card {
+            border-radius: 14px !important;
+            background: #fff !important;
+            box-shadow: 0 3px 14px rgba(31, 48, 61, .06) !important;
+            overflow: visible !important;
+        }
+
+        .atc-admin-page .atc_admin_list {
+            border-radius: 14px !important;
+            overflow: visible !important;
+        }
+
+        .atc-admin-page .atc_admin_list .okay_list_body_item:first-child,
+        .atc-admin-page .atc_admin_list .okay_list_body_item:first-child .okay_list_row {
+            border-top-left-radius: 14px !important;
+            border-top-right-radius: 14px !important;
+        }
+
+        .atc-admin-page .okay_list_footer {
+            border-bottom-left-radius: 14px !important;
+            border-bottom-right-radius: 14px !important;
+        }
+    }
+
+
+    /* TogetherCheaper: final mobile bulk-action alignment */
+    @media (max-width: 767px) {
+        .atc-admin-page .okay_list_footer .okay_list_foot_left {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 8px !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            height: 40px !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_check {
+            position: static !important;
+            display: flex !important;
+            flex: 0 0 30px !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 30px !important;
+            min-width: 30px !important;
+            max-width: 30px !important;
+            height: 40px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_check .okay_ckeckbox {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            display: block !important;
+            margin: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .okay_list_option {
+            position: relative !important;
+            display: block !important;
+            flex: 1 1 auto !important;
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            height: 40px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .atc-admin-page .okay_list_footer .atc-action-select,
+        .atc-admin-page .okay_list_footer .atc-action-button {
+            width: 100% !important;
+            min-width: 0 !important;
+            height: 40px !important;
+            margin: 0 !important;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .atc-admin-page .okay_list_footer .okay_list_check {
+            flex-basis: 28px !important;
+            width: 28px !important;
+            min-width: 28px !important;
+            max-width: 28px !important;
+        }
+    }
+
 </style>
 
 <div class="main_header atc-admin-header">
@@ -620,33 +1210,33 @@
                             {/if}
                         </div>
                     </div>
-                    <div class="okay_list_boding atc_bundle_price">
+                    <div class="okay_list_boding atc_bundle_price" data-mobile-label="{$btr->astra_together_cheaper__price_short|escape}">
                         <strong>{$bundle->bundle_price|convert} {$currency->sign|escape}</strong>
                     </div>
-                    <div class="okay_list_boding atc_bundle_diagnostic">
+                    <div class="okay_list_boding atc_bundle_diagnostic" data-mobile-label="{$btr->astra_together_cheaper__diagnostic|escape}">
                         <div class="atc_diag">
                             {if $bundle->diagnostic->code == 'active'}
                                 <span class="atc_diag_badge atc_diag_badge--success">{$btr->astra_together_cheaper__diag_active|escape}</span>
                             {elseif $bundle->diagnostic->code == 'disabled'}
                                 <span class="atc_diag_badge atc_diag_badge--muted">{$btr->astra_together_cheaper__diag_disabled|escape}</span>
                             {elseif $bundle->diagnostic->code == 'primary_out_of_stock'}
-                                <span class="atc_diag_badge atc_diag_badge--warning" data-tooltip="{$btr->astra_together_cheaper__diag_primary_out_of_stock|escape}">{$btr->astra_together_cheaper__diag_out_of_stock|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--warning" data-tooltip="{$btr->astra_together_cheaper__diag_primary_out_of_stock|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_out_of_stock|escape}</span>
                             {elseif $bundle->diagnostic->code == 'secondary_out_of_stock'}
-                                <span class="atc_diag_badge atc_diag_badge--warning" data-tooltip="{$btr->astra_together_cheaper__diag_secondary_out_of_stock|escape}">{$btr->astra_together_cheaper__diag_out_of_stock|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--warning" data-tooltip="{$btr->astra_together_cheaper__diag_secondary_out_of_stock|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_out_of_stock|escape}</span>
                             {elseif $bundle->diagnostic->code == 'bundle_price_not_cheaper'}
-                                <span class="atc_diag_badge atc_diag_badge--warning" data-tooltip="{$btr->astra_together_cheaper__diag_price_outdated_hint|escape}">{$btr->astra_together_cheaper__diag_price_outdated|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--warning" data-tooltip="{$btr->astra_together_cheaper__diag_price_outdated_hint|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_price_outdated|escape}</span>
                             {elseif $bundle->diagnostic->code == 'product_price_invalid'}
-                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_price_invalid_hint|escape}">{$btr->astra_together_cheaper__diag_price_invalid|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_price_invalid_hint|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_price_invalid|escape}</span>
                             {elseif $bundle->diagnostic->code == 'primary_product_unavailable'}
-                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_primary_product_unavailable|escape}">{$btr->astra_together_cheaper__diag_product_unavailable|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_primary_product_unavailable|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_product_unavailable|escape}</span>
                             {elseif $bundle->diagnostic->code == 'secondary_product_unavailable'}
-                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_secondary_product_unavailable|escape}">{$btr->astra_together_cheaper__diag_product_unavailable|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_secondary_product_unavailable|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_product_unavailable|escape}</span>
                             {elseif $bundle->diagnostic->code == 'primary_variant_unavailable'}
-                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_primary_variant_unavailable|escape}">{$btr->astra_together_cheaper__diag_variant_unavailable|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_primary_variant_unavailable|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_variant_unavailable|escape}</span>
                             {elseif $bundle->diagnostic->code == 'secondary_variant_unavailable'}
-                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_secondary_variant_unavailable|escape}">{$btr->astra_together_cheaper__diag_variant_unavailable|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_secondary_variant_unavailable|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_variant_unavailable|escape}</span>
                             {else}
-                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_invalid_config_hint|escape}">{$btr->astra_together_cheaper__diag_invalid_config|escape}</span>
+                                <span class="atc_diag_badge atc_diag_badge--danger" data-tooltip="{$btr->astra_together_cheaper__diag_invalid_config_hint|escape}" tabindex="0">{$btr->astra_together_cheaper__diag_invalid_config|escape}</span>
                             {/if}
                         </div>
                     </div>
