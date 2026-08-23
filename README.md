@@ -444,20 +444,6 @@ design/js/together_cheaper.js
 astra__together_cheaper
 ```
 
-Версія `1.1.0` використовує чисту структуру `Astra`.
-
-Якщо оновлюється стара тестова Astra-версія, метод міграції створює актуальну таблицю `astra__together_cheaper`.
-
-Дані зі старої тестової таблиці:
-
-```text
-sviat__together_cheaper
-```
-
-автоматично не імпортуються.
-
-Це зроблено навмисно, щоб фінальна версія модуля не залежала від legacy-структури.
-
 ---
 
 # Структура модуля
@@ -525,8 +511,6 @@ Smarty tag: Astra_together_cheaper
 Route: Astra_together_cheaper_add
 Discount sign: Astra_bundle
 ```
-
-Legacy-ідентифікатори `Sviat_*` у поточній архітектурі не використовуються.
 
 ## Основна таблиця
 
