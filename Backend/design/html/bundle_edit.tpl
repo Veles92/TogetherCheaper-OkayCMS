@@ -480,8 +480,73 @@
             margin-bottom: 8px;
         }
 
+        .atc-edit-header {
+            display: block !important;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 0 16px 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        .atc-edit-header .main_header__item {
+            display: block !important;
+            float: none !important;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        .atc-edit-header .main_header__item:first-child {
+            margin-bottom: 14px !important;
+        }
+
         .atc-edit-header .main_header__inner {
-            flex-wrap: wrap;
+            display: flex !important;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        .atc-edit-header .main_header__item:first-child .main_header__inner {
+            display: block !important;
+        }
+
+        .atc-edit-header .box_heading,
+        .atc-edit-header .heading_page {
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+        }
+
+        .atc-edit-header .main_header__item:last-child .main_header__inner {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            justify-content: flex-start !important;
+            flex-wrap: nowrap !important;
+            gap: 8px !important;
+        }
+
+        .atc-edit-header .main_header__item:last-child .btn {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            min-height: 42px !important;
+            height: 42px !important;
+            margin: 0 !important;
+            padding: 0 16px !important;
+            box-sizing: border-box !important;
+        }
+
+        .atc-edit-header .main_header__item:last-child .btn.ml-1 {
+            margin-left: 0 !important;
         }
     }
 </style>
